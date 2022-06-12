@@ -1,0 +1,170 @@
+
+$primary-color: #08C3BA;
+$body-color: #ededed;
+$white: #fff;
+$border-color: #CDCDCD;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $body-color;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 20px 0 20px;
+}
+.flex {
+  display: flex
+}
+.items-center {
+  align-items: center;
+}
+.space-between {
+  justify-content: space-between;
+}
+.column {
+  flex-direction: column;
+}
+.justify-center {
+  justify-content: center;
+}
+.text-center {
+  text-align: center;
+}
+
+header {
+  height: 75px;
+  background-color: $white;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 60px;
+  padding: 20px;
+  form {
+    width: 60%;
+  }
+  .search-input {
+    border: solid 1px $border-color;
+    padding: 0 10px 0 10px;
+    border-radius: 3px;
+    height: 47px;
+    input {
+      outline: none;
+      border: none;
+      font-size: 16px;
+      margin-left: 5px;
+      width: 100%;
+    }
+  }
+  .nav {
+    list-style: none;
+    color: $primary-color;
+    margin: 0;
+    li {
+      margin-right: 30px;
+      font-weight: 700;
+      text-transform: capitalize;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    height: unset;
+    form {
+      width: 100%;
+    }
+    .search-input {
+      margin: 10px 0 10px 0;
+    }
+  }
+}
+
+.hero-component {
+  p {
+    margin: 0;
+    color: $white;
+  }
+  padding: 50px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: rgba(0,0,0,0.5);
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  .hero__details, .hero__follow-btn {
+    z-index: 1;
+  }
+  .hero__image {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 30px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  .hero__artist-name {
+    h1 {
+      color: $white;
+      margin: 0 5px 5px 0;
+    }
+  }
+  .hero__verified-badge {
+    height: 24px;
+  }
+  .hero__follow-btn {
+    background-color: $primary-color;
+    border: none;
+    color: $white;
+    font-size: 16px;
+    min-width: 160px;
+    height: 40px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero__bg-overlay {
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    filter: blur(8px);
+  }
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    p {
+      text-align: center;
+    }
+    .hero__artist-name {
+      align-items: center;
+      width: 100%;
+      justify-content: center;
+    }
+    .hero__details {
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero__artist-name,
+    .hero__follow-btn {
+      margin-top: 20px;
+    }
+  }
+}
